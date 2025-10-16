@@ -1,5 +1,8 @@
 const express = require('express');
 const cors = require('cors');
+app.use(cors({
+  origin: 'https://nutrifitt-site-avbdo.netlify.app'
+}))
 const helmet = require('helmet');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
@@ -21,7 +24,7 @@ const pool = new Pool({
 // Middlewares
 app.use(helmet());
 app.use(cors({
-    origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+    origin: process.env.FRONTEND_URL || 'https://nutrifitt-site-avbdo.onrender.com',
     credentials: true
 }));
 app.use(express.json());
