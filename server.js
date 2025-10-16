@@ -27,6 +27,11 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// ROTA NOVA: Root amigável
+app.get('/', (req, res) => {
+  res.send('🚀 Bem-vindo à API NutriFitt!');
+});
+
 // Rota de teste
 app.get('/health', (req, res) => {
   res.json({
